@@ -1,0 +1,69 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+         <script type="text/javascript">
+             bob.test();
+             var result = bob.strTest("hi wtf");
+             document.write('"' + result + '"');
+           </script>   
+           
+      <script type="text/javascript">
+          function message(id, str) {
+              var str = str + "  "+ document.getElementById(id).value;
+              bob.messsage(str);
+          }
+    </script>      
+        
+            
+	</head>
+	<body>
+    <h1>The CefSharp control demo</h1>
+    
+    <input type ="button" id="btn_01" value = "test01"      onclick="message('btn_01', 'Hello cb ')" />
+    <input type ="button" id="btn_02" value="test callback" onclick="message('btn_02', 'Hello ')" />
+
+	<p>
+	A demo of the CefSharp.WinForms.dll not the MS Webbrowser control capturing click events.
+	<br/>
+	This demononstrates basic html 4.0, which is better in displaying complex documents instead of winforms user controls.
+	<br/>
+	<br>Try it.<br/>
+	Go to File menu and load different examples of what the control is capable of.
+	<br/><br/>
+	In Summary:
+	<br/>
+	
+	<ul>
+	
+	<li>1. html files</li>
+	<li>2. xml files</li>
+	<li>3.  (xml x xslt) files my favorite </li>
+	<li>4. html forms for data entry/retrivial</li>
+	<li>5. pdf files.</li>
+	</ul>
+	</p>
+	<a href="http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii"> xml tool</a>
+	
+	
+<form style="margin:0px" action="tryit_view.asp" method="post" id="MYform" name="MYform" >
+    <textarea id="fld01" name="fld01" rows="4" cols="50"> Enter Something </textarea>
+    
+			First name: <input id='firstname' type='text' name='firstname'/><br/>
+			Last name: <input id='lastname' type='text' name='lastname'/><br/>
+			Password: <input id='password' type='password' name='pwd'/><br><br/>
+			
+			<input type='radio' id='male' name='sex' value='male'/>Male<br/>
+			<input type='radio' id='female' name='sex' value='female'/>Female<br/><br/>
+			<input type='checkbox' id='bike' name='vehicle' value='Bike'/>I have a bike<br/>
+			<input type='checkbox' id='car' name='vehicle' value='Car'/>I have a car <br/><br/>
+			
+			<input type='button' id='ok' value='OK'/><br/>
+			<input type='button' id='cancel' value='Cancel'/><br/><br/>
+    
+    
+    <hr/>
+    <input type="button" value="Submit"/>
+</form>    
+	
+	</body>
+</html>
