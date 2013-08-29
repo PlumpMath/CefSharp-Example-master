@@ -20,28 +20,6 @@ namespace Test
             InitializeComponent();
         }
 
-//        protected void OnElementClicked(object sender, EventArgs args)
-//        {
-//            HtmlElement el = sender as HtmlElement;
-//            string id = el.GetAttribute("id");
-
-//            string elType = el.GetAttribute("type");
-//            string elName = el.GetAttribute("name");
-//            string elValue = el.GetAttribute("value");
-//            _str = "Clicked: " + elType + " " + elName + " " + elValue + "\r\n";
-
-//            string msg = string.Format("{0}\n {1}, {2}, {3}",
-//                id
-//, elType
-//, elName
-//, elValue);
-
-
-
-//            MessageBox.Show(msg);
-//        }
-
-
         public void Test(String message)
         {
             MessageBox.Show(message, "client code");
@@ -144,12 +122,48 @@ namespace Test
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string uri = dialog.FileName;
-                
-                //this.webBrowser1.Navigate(uri);
                 this.webView.Load(uri);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // ___________
+            MessageBox.Show("Get data.");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // xml x xslt => html
+            MessageBox.Show("xml x xslt => html");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // ___________
+            string myString = string.Empty;
+            System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
+
+            string appDir = System.IO.Directory.GetCurrentDirectory() + "\\App_Data" + "\\";
+            dialog.InitialDirectory = appDir;
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string uri = dialog.FileName;
+
+                System.IO.StreamReader myFile =
+                new System.IO.StreamReader(uri);
+                myString = myFile.ReadToEnd();
+                //this.webView.Load(uri);
             }
 
 
+            MessageBox.Show("load new html");
+            //string str;
+            //str = "<h1>You did it.</h1>";
+
+            this.webView.LoadHtml(myString);        
+                
+            //this.webView.Load(uri);
         }
     }
 }
