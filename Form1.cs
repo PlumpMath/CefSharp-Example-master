@@ -153,17 +153,12 @@ namespace Test
                 System.IO.StreamReader myFile =
                 new System.IO.StreamReader(uri);
                 myString = myFile.ReadToEnd();
-                //this.webView.Load(uri);
             }
 
-
             MessageBox.Show("load new html");
-            //string str;
-            //str = "<h1>You did it.</h1>";
+            //myString = "<h1>You did it.</h1>";
 
             this.webView.LoadHtml(myString);        
-                
-            //this.webView.Load(uri);
         }
     }
 }
